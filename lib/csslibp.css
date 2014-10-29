@@ -1,0 +1,106 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font: Arial; 
+  font-weight:bold;
+}
+
+.ninja {display: none !important; }
+.over9000{position:fixed; right:0; bottom:0; z-index: 9999;}
+/*bottom right*/
+/* add link to chrome download for unsupported browsers */
+
+.bpToolbox {
+ background-color:blue;
+ position:fixed;
+ z-index:9998;
+ width: 50px; height: 150px;
+ right:15px;
+ bottom:25px;
+ transition: width 2s;
+}
+
+.bpToolbox:hover {
+ width: 150px;
+}
+
+.bptbBtn {
+  position:relative;
+  width: 115px;
+  height: 95px;
+}
+
+/* PROGRESS BAR */
+.bpContainer {
+  position: fixed;
+  margin: auto; 
+  top: 0; left: 0; bottom: 0; right: 0;
+  width: 45%; height: 20%; 
+}
+
+.bpProgressWrap {   
+  box-sizing: border-box;
+  min-height: 35px;
+  width: 100%;  height:100%;
+  padding:5px;
+  background-color: #1a1a1a;  
+  border-radius: 15px;  
+  box-shadow: 0 1px 5px #000 inset, 0 1px 0 #444;     
+}
+.bpProgress { 
+  box-sizing: border-box; 
+  padding-top:4px;
+  overflow: hidden;
+  font-size:14vh;  
+  min-height: 25px;
+  display: inline-block;  
+  width:1%; height: 100%;  
+  background-color: #00cc00;
+  border-radius: 15px;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset; 
+  background-size: 30px 30px;     
+  background-image: linear-gradient( 135deg, rgba(255, 255, 255, .15) 25%, transparent 25%,
+    transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%,
+		transparent 75%, transparent);  
+  -webkit-transition: width 1.5s ease-in-out; 
+  -webkit-animation-name: animate-stripes,stopLight;
+  -webkit-animation-duration: 3s,1.5s; 
+  -webkit-animation-iteration-count: infinite,1;
+  -webkit-animation-timing-function: linear, linear;
+/*http://stackoverflow.com/questions/8321329/have-an-element-with-2-css-animations-executing-at-the-same-time?answertab=votes#tab-top 
+   */
+}
+.bpProgress:after {
+float:right;	
+content: attr(width);   	 
+padding-right:10px; 
+}
+
+@-webkit-keyframes stopLight {
+  0% {background-color: #00cccc;}
+  100% { background-color: #00cc00}      
+}
+
+@-webkit-keyframes animate-stripes {
+  0% { background-position: 0 0; } 
+  100% { background-position: 60px 0; }  
+}
+@keyframes animate-stripes {
+  0% { background-position: 0 0; } 
+  100% {  background-position: 60px 0;  }
+}
+
+/* END PROGRESS BAR */
+
+/*
+http://csslint.net
+
+www.jslint.com
+http://closure-compiler.appspot.com/home
+http://htmlcompressor.com
+https://tinypng.com/
+http://jsbeautifier.org
+http://caniuse.com
+jsfiddle
+
+*/

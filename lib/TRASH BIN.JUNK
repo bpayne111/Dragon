@@ -1,0 +1,7 @@
+,
+   "new_grass" { "base": {"ctxIndex": 0, "speed": 3, "xMove": 0, "yMove": 0,                       "flag": "flat",
+						   "xOff": 0, "yOff": 0 },
+             "media": { "spriteURL": "lib/ground.png"},	
+						 "sprite":{"sW": 96, "sH": 96}
+    
+  }

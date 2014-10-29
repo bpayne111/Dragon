@@ -1,0 +1,26 @@
+
+{
+  "player1": {"base":  {"x":145, "y": 145, "ctxIndex": 1, "speed": 1, 
+											  "xMove": 0, "yMove": 0, "flag": "player" }, 
+              "media": {"spriteURL": "lib/dragonGreenSprite.png" },
+              "sprite": {"sW": 96, "sH": 96, "cX": 0, "cY": 0, "frameRow": 3}
+             },	
+  "firebreath": {"base": {"x": 25, "y": 25, "ctxIndex": 1, "speed": 2, "xMove": 0, "yMove": 0, 							  "flag": "something" }, 
+                 "media": { "spriteURL": "lib/dragonRedSprite.png"},
+                 "sprite":{"sW": 96, "sH": 96, "cX": 0, "cY": 0, "frameRow": 3} 
+                },
+	"grass": { "base": {"ctxIndex": 0, "speed": 3, "xMove": 0, "yMove": 0,                             "flag": "bg",
+					  	 "xOff": 0, "yOff": 0 },
+             "media": { "spriteURL": "lib/grass_2.png"},	
+						 "sprite":{"sW": 96, "sH": 96} 
+           }, 
+  "cave": { "base": {"x": 205, "y":102, "ctxIndex": 0, "speed": 3, "xMove": 0, "yMove": 0, 
+						  "flag": "terrain" },
+             "media": { "spriteURL": "lib/cave.png"},	
+						 "sprite":{"sW": 64, "sH": 64} 
+          }, 
+  "badguy": {"base":  {"x": 55, "y": 55, "ctxIndex": 2, "speed":2, "xMove": 0, "yMove": 0, 						 "flag":"ai" }, 
+             "media": {"sound": null, "spriteURL": "lib/dragonRedSprite.png"},
+             "sprite":{"sW": 96, "sH": 96, "cX": 0, "cY": 0, "frameRow": 3}            
+            }
+}

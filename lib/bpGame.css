@@ -1,0 +1,85 @@
+
+@import url(https://fonts.googleapis.com/css?family=Overlock:900italic);
+
+/* #toolbox {font-family: 'Overlock', cursive; } */
+/* .ui-progressbar { z-index:9689; } */
+html { background-color: #828282;}
+canvas { border-radius: 15px;}
+#game { 
+   position:fixed;
+ left: 2.5%;
+ top: 2.5%;
+ width: 95%;
+ height: 95%;
+ min-width: 250px;
+ min-height: 250px;
+  
+    border-style: solid;
+	border-width: 17px;
+	-webkit-border-image: url(jungleSquare.png) 27 repeat;
+	border-image: url(jungleSquare.png) 27 fill repeat;
+}
+
+#bootProg .ui-progressbar-value {
+ background: url("images/animated-overlay.gif")!important;
+}
+#bootProg { 
+ position:fixed;
+ z-index:9689;
+ width: 50%;
+ height: 45px;
+
+}
+/* #menu, .ui-dialog { overflow: visible; } */
+/* .ui-dialog-titlebar { display:none; } */
+.ui-progressbar {background: #727272; }
+.ui-progressbar-value { background: #6057f3; }
+
+/* http://stackoverflow.com/questions/3782944/jquery-ui-how-to-use-ui-widget-overlay-by-itself */
+.bpModal {
+  height:100%;
+    left:0;
+    position:absolute;
+    top:0;
+    width:100%;
+}
+.menu2{ 
+border-radius: 15px;
+border: 1px solid #288c00;
+position:fixed;
+left:17.5%;
+top:17.5%;
+width: 25%;
+height: 25%;
+min-width: 250px;
+min-height: 250px;
+background: #285c00 url("images/ui-bg_inset-soft_10_285c00_1x100.png") 50% bottom repeat-x;
+
+}
+
+.hud {
+	z-index:9109;
+	 opacity: .7;
+	position: absolute;
+	width: 15%; height:10%; 
+	bottom: 0; left: 0;
+	background: yellow;
+	border-top-right-radius: 50%;
+	border-style: solid;
+	border-width: 27px;
+	/* border-image: url(jungleSquare.png) 27 repeat; */
+
+	/* border-image: url(jungleSquare.png) 25 250 0 0 fill; */
+	
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,14 @@
+{
+  "name": "Dragon Game",
+  "description": "Learning HTML5",
+  "version": "0.1",
+  "permissions": ["storage"],
+  "app": {
+    "background": {
+      "scripts": ["event.js"]
+    }
+  },
+  "icons": { "16": "lib/images/lol_blue_16.png", "128": "lib/images/lol_blue_128_trans.png" }
+  
+  
+}

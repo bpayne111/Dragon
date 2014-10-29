@@ -1,0 +1,90 @@
+
+var defaultBase = {'x': 10, 'y': 10, 'ctxIndex':0, 'speed': 2, 'xMove':0, 'yMove':0 };
+var defaultSprite = {'sW':96, 'sH':96, 'cX':0, 'cY': 0, 'frameRow': 3 };
+var defaultMedia; //find some silly image to put here
+var newbar = {
+//change fire breath to real values
+
+  'player1': {'base':  {'x': 10, 'y': 10, 'ctxIndex': 1, 'speed': 2, 'xMove': 0, 'yMove': 0 }, 
+             'media': {'sound': null, 'spriteURL': 'lib/dragonGreenSprite.png' },
+             'sprite': defaultSprite 
+            },	
+  'firebreath': {'base':  {'x': 25, 'y': 25, 'ctxIndex': 0, 'speed': 2, 'xMove': 0, 'yMove': 0 }, 
+                 'media': {'sound': null, 'spriteURL': 'lib/dragonRedSprite.png'},
+                  'sprite':{'sW': 96, 'sH': 96, 'cX': 0, 'cY': 0, 'frameRow': 3} 
+                },
+  'badguy': {'base':  {'x': 55, 'y': 55, 'ctxIndex': 0, 'speed':2, 'xMove': 0, 'yMove': 0 }, 
+             'media': {'sound': null, 'spriteURL': 'lib/dragonRedSprite.png'},
+             'sprite':{'sW': 96, 'sH': 96, 'cX': 0, 'cY': 0, 'frameRow': 3},
+             'myThizzle': function(){              
+               if(frameCount % 6 === 0) {   
+                 switch (Math.floor( Math.random() * 4 )+1) {
+                   case 1: newbar.badguy.base.yMove = -2;
+                     break;
+	                 case 2: newbar.badguy.base.yMove = 2;
+                     break;	
+	                 case 3: newbar.badguy.base.xMove = -2;
+                     break;
+	                 case 4: newbar.badguy.base.xMove = 2;
+                     break;
+	               } //end switch
+               } //end framecount if            
+             }//end function 
+  }//end badguy
+};//end newbar
+
+  newbar.getDirections = function (toon) { //get keys pressed	
+		if(toon){
+			if (KEYPRESSED('up')) { toon.base.yMove = -toon.base.speed;}
+			if (KEYPRESSED('down')) {toon.base.yMove = toon.base.speed; }
+			if (KEYPRESSED('left')){ toon.base.xMove = -toon.base.speed; }
+			if (KEYPRESSED('right')) { toon.base.xMove = toon.base.speed; }
+		}		
+  };
+
+	newbar.setDirections = function (toon) { 
+		if(toon){
+	    toon.base.x += toon.base.xMove;
+	    toon.base.y += toon.base.yMove;
+		}
+ 
+	};//end setDirections
+
+	newbar.spriteClip = function (toon) {  
+		if(toon){  
+	  	if (toon.base.yMove < 0) {toon.sprite.cY = toon.sprite.sH*3; } //if left
+			if (toon.base.yMove > 0) {toon.sprite.cY = 0; }
+			if (toon.base.xMove < 0) {toon.sprite.cY = toon.sprite.sH; }
+			if (toon.base.xMove > 0) {toon.sprite.cY = toon.sprite.sH*2; }
+		
+			if(frameCount % 6 === 0) //if framecount divides into 6 
+			{ toon.sprite.cX += toon.sprite.sW;}
+			if (toon.sprite.cX >= toon.sprite.sW * toon.sprite.frameRow){ //reset x if at end
+			 toon.sprite.cX = 0;	
+			}
+		}//end if toon
+	}; //end spriteClip  
+
+ newbar.draw = function (toon, ctx) {     	
+//add error checking	
+ctx.beginPath(); //move beginPath to the loop?	
+	//prep sprite	
+	if (toon.base.xMove  || toon.base.yMove)  //if moving
+	  {newbar.spriteClip(toon); }
+	//draw sprite clip
+
+  ctx.drawImage(toon.sprite.image, toon.sprite.cX, toon.sprite.cY, toon.sprite.sW, toon.sprite.sH, toon.base.x, toon.base.y, toon.sprite.sW, toon.sprite.sH);   
+  ctx.closePath(); //move closePath to the loop?	
+   };   
+
+  newbar.rest = function (toon) {
+   toon.base.xMove = 0; toon.base.yMove = 0;
+    //ctx[index]closePath();
+  };
+
+ newbar.playSounds = function (toon) {
+    //console.log('playSounds ran');
+    //this.snd.play(); 
+  };
+
+  
